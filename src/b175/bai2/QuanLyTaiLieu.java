@@ -10,17 +10,35 @@ public class QuanLyTaiLieu {
         this.soLuong = 0;
     }
 
-    public void themMoi(TaiLieu taiLieu) {
+    public int themMoi(TaiLieu taiLieu) {
         for (int i = 0; i < soLuong; i++) {
             if (danhSachTaiLieu[i].getNxb().equals(taiLieu.getNxb())) {
-                danhSachTaiLieu[i].setSoBanPhatHanh(danhSachTaiLieu[i].getSoBanPhatHanh()+taiLieu.getSoBanPhatHanh());
-                return;
+                danhSachTaiLieu[i].setSoBanPhatHanh(danhSachTaiLieu[i].getSoBanPhatHanh() + taiLieu.getSoBanPhatHanh());
+                return 0;
             }
         }
         taiLieu.setMa(maHienTai);
         maHienTai++;
         danhSachTaiLieu[soLuong] = taiLieu;
         soLuong++;
+        return 1;
+    }
+
+    public void hienThiDanhSachTheoLoai(String loai) {
+        if (loai.equals("Sach")) {
+            for (int i = 0; i < soLuong; i++) {
+                if (danhSachTaiLieu[i] instanceof Sach) {
+                    System.out.println(danhSachTaiLieu[i]);
+                }
+            }
+        }
+        if (loai.equals("TapChi")) {
+            for (int i = 0; i < soLuong; i++) {
+                if (danhSachTaiLieu[i] instanceof TapChi) {
+                    System.out.println(danhSachTaiLieu[i]);
+                }
+            }
+        }
     }
 
     public void hienThi() {

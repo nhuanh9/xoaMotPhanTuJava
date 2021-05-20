@@ -3,9 +3,12 @@ package b175.bai2;
 public class TaiLieu {
     private int ma;
     private String nxb;
+    private String ten;
     private int soBanPhatHanh;
 
-    public TaiLieu(String nxb, int soBanPhatHanh) {
+    public TaiLieu(String ten, String nxb, int soBanPhatHanh) {
+
+        this.ten = ten;
         this.nxb = nxb;
         this.soBanPhatHanh = soBanPhatHanh;
     }
@@ -35,6 +38,14 @@ public class TaiLieu {
 
     public void setSoBanPhatHanh(int soBanPhatHanh) {
         this.soBanPhatHanh = soBanPhatHanh;
+    }
+
+    public String getTen() {
+        return ten;
+    }
+
+    public void setTen(String ten) {
+        this.ten = ten;
     }
 
     @Override

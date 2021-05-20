@@ -4,8 +4,8 @@ public class TapChi extends TaiLieu {
     private int soPhatHanh;
     private int thangPhatHanh;
 
-    public TapChi( String nxb, int soBanPhatHanh, int soPhatHanh, int thangPhatHanh) {
-        super(nxb, soBanPhatHanh);
+    public TapChi(String ten, String nxb, int soBanPhatHanh, int soPhatHanh, int thangPhatHanh) {
+        super(ten, nxb, soBanPhatHanh);
         this.soPhatHanh = soPhatHanh;
         this.thangPhatHanh = thangPhatHanh;
     }
