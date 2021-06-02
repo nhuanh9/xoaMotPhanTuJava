@@ -7,10 +7,10 @@ import java.util.List;
 
 public class ManagementPerson {
     private List<Person> personList;
-
+    MFCSV mfcsv = new MFCSV();
     public ManagementPerson() throws IOException, ClassNotFoundException {
         try {
-            this.personList = ManagementFile.readFromFile(ManagementFile.sourceFile);
+            this.personList = mfcsv.readFile("data1.csv");
         } catch (Exception e) {
             this.personList = new ArrayList<>();
         }
@@ -34,7 +34,7 @@ public class ManagementPerson {
 
     public void add(Person person) throws IOException {
         this.personList.add(person);
-        ManagementFile.writeToFile(this.personList, ManagementFile.sourceFile);
+        mfcsv.writeFile("data1.csv", this.personList);
         System.out.println("Thêm thành công!");
     }
 
