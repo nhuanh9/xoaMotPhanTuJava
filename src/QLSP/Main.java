@@ -1,7 +1,9 @@
 package QLSP;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -66,6 +68,9 @@ public class Main {
         String name = sc.nextLine();
         System.out.println("Nhập vào tuổi:");
         int age = sc.nextInt();
-        return new Person(id, name, age);
+        List<Country> countries = new ArrayList<>();
+        countries.add(new Country("TB"));
+        countries.add(new Country("NĐ"));
+        return new Person(id, name, age, countries);
     }
 }

@@ -8,9 +8,10 @@ import java.util.List;
 public class ManagementPerson {
     private List<Person> personList;
     MFCSV mfcsv = new MFCSV();
+
     public ManagementPerson() throws IOException, ClassNotFoundException {
         try {
-            this.personList = mfcsv.readFile("data1.csv");
+            this.personList = ManagementFile.readFromFile("data1.csv");
         } catch (Exception e) {
             this.personList = new ArrayList<>();
         }
@@ -24,7 +25,8 @@ public class ManagementPerson {
         this.personList = personList;
     }
 
-    public String display() {
+    public String display() throws IOException, ClassNotFoundException {
+        this.personList = ManagementFile.readFromFile("data1.csv");
         String str = "";
         for (Person p : this.personList) {
             str += p.toString() + "\n";
@@ -34,7 +36,7 @@ public class ManagementPerson {
 
     public void add(Person person) throws IOException {
         this.personList.add(person);
-        mfcsv.writeFile("data1.csv", this.personList);
+        ManagementFile.writeToFile(this.personList, "data1.csv");
         System.out.println("Thêm thành công!");
     }
 
