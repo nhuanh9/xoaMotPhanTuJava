@@ -23,7 +23,7 @@ public class RWFile {
     }
 
     public static void main(String[] args) throws IOException {
-        RWFile.writeToFile("demo.csv");
+        RWFile.writeToFile("demoaaa.csv");
         readFromFile("demo.csv");
 
     }
